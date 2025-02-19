@@ -1,0 +1,61 @@
+# Config Section
+appId: com.example.myapplication
+---
+# Commands Section
+# Add a new task
+- tapOn:
+    text: "Add task"  # Tap the FAB to open the dialog
+- assertVisible: "Nouvelle tâche"  # Verify the dialog title
+- inputText: "My new task"  # Enter the task title
+- tapOn:
+    text: "Sélectionner une date limite"  # Open the date picker
+- tapOn:
+    text: "OK"  # Confirm the date selection
+- tapOn:
+    text: "Ajouter"  # Add the task
+- assertVisible: "My new task"  # Verify the task is added to the list
+
+# Edit an existing task
+- tapOn:
+    text: "My new task"  # Tap the task to edit it
+- assertVisible: "Modifier la tâche"  # Verify the edit dialog title
+- eraseText  # Clear the existing title
+- inputText: "Updated task"  # Enter the updated title
+- tapOn:
+    text: "Sélectionner une date limite"  # Open the date picker
+- tapOn:
+    text: "15"  # Select a new date (adjust based on your date picker UI)
+- tapOn:
+    text: "OK"  # Confirm the date selection
+- tapOn:
+    text: "Mettre à jour"  # Update the task
+- assertVisible: "Updated task"  # Verify the task is updated in the list
+
+# Delete a task
+- longPressOn:
+    text: "Updated task"  # Long press the task to delete it
+- tapOn:
+    text: "Supprimer"  # Confirm deletion
+- assertNotVisible: "Updated task"  # Verify the task is removed from the list
+
+# Validate empty task title error
+- tapOn:
+    text: "Add task"  # Tap the FAB to open the dialog
+- assertVisible: "Nouvelle tâche"  # Verify the dialog title
+- tapOn:
+    text: "Ajouter"  # Try to add a task without a title
+- assertVisible: "Le titre ne peut pas être vide"  # Verify the error message
+
+# Modify task deadline
+- tapOn:
+    text: "Updated task"  # Tap the task to edit it
+- assertVisible: "Modifier la tâche"  # Verify the edit dialog title
+- tapOn:
+    text: "Sélectionner une date limite"  # Open the date picker
+- tapOn:
+    text: "15"  # Select a new date (adjust based on your date picker UI)
+- tapOn:
+    text: "OK"  # Confirm the date selection
+- tapOn:
+    text: "Mettre à jour"  # Update the task
+- assertVisible: "Updated task"  # Verify the task is updated in the list
