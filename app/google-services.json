@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "227269544657",
+    "project_id": "mobi-d4435",
+    "storage_bucket": "mobi-d4435.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227269544657:android:16e1f8b3d2a574e474d3f0",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxv5TYKMbNbBExs7ihmS1MOGjY1P1QlGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
